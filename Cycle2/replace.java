@@ -4,10 +4,10 @@ class replace_element
     public static void main(String args[])
     {
         int i;
-        int a[]=new int[20];
         Scanner obj=new Scanner(System.in);
         System.out.println("Enter the number of elements:");
         int n=obj.nextInt();
+        int a[]=new int[n];
         System.out.println("Enter the elements:");
         for(i=0;i<n;i++)
         {
