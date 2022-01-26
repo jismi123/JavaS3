@@ -1,48 +1,46 @@
 import java.util.*;
+
 class transpose_matrix
 {
     public static void main(String args[])
-    {
-        Scanner obj=new Scanner(System.in);
-        int i,j,r,c;
-        System.out.println("Enter the number of rows:");
-        r=obj.nextInt();
-        System.out.println("Enter the number of columns:");
-        c=obj.nextInt();
-        int original[][]=new int[r][c];
-        int transpose[][]=new int[r][c];
-        System.out.println("Enter the elements of matrix");
-        for(i=0;i<r;i++)
-        {
-            for(j=0;j<c;j++)
-            {
-                original[i][j]=obj.nextInt(); 
-            }
-        }
-        for(i=0;i<r;i++)
-        {
-           for(j=0;j<c;j++)
-           {
-              transpose[i][j]=original[j][i];
-           }
-        } 
-        System.out.println("Matrix before");
-        for(i=0;i<r;i++)
-        {
-            for(j=0;j<c;j++)
-            {
-                System.out.print(original[i][j]+ " ");
-            }
-            System.out.println();
-        }
-        System.out.println("Matrix after");
-        for(i=0;i<r;i++)
-        {
-            for(j=0;j<c;j++)
-            {
-                System.out.print(transpose[i][j]+ " ");
-            }
-            System.out.println();
-        }
-   }  
-}  
+     {
+         
+         int i,j,s=0;
+         Scanner obj = new Scanner(System.in);
+         System.out.print("Enter no of rows :");
+         int n = obj.nextInt();
+         System.out.print("Enter no of columns: ");
+         int m = obj.nextInt();
+         int a[][] = new int[20][20];
+         int b[][] = new int[20][20];
+         
+         System.out.println("Enter elements of the matrix:");
+         for(i=0;i<n;i++)
+         {
+            for(j=0;j<m;j++)
+             {
+                a[i][j] = obj.nextInt();
+             }
+         }
+         System.out.println("Entered Matrix:");
+         for(i=0;i<n;i++)
+          {
+          System.out.print("\n");
+          for(j=0;j<m;j++)
+                 System.out.print(a[i][j]+ "\t");
+          }
+   
+          for(i=0;i<n;i++)
+                for(j=0;j<m;j++)
+                 {
+                     b[j][i] = a[i][j];
+                 }
+         System.out.println("\nTransposed Matrix:");
+         for(i=0;i<m;i++)
+         { 
+          System.out.print("\n");
+          for(j=0;j<n;j++)
+              System.out.print(b[i][j]+"\t");
+         }
+     }
+}
