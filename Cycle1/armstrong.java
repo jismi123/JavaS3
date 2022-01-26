@@ -1,22 +1,35 @@
 import java.util.*;
 class armstrong
 {
-    public static void main(String args[])
+    public static void main(String agrs[])
     {
-        int num,rem,result=0;
-        Scanner obj=new Scanner(System.in);
-        System.out.println("Enter a 3 digit number:");
-        int n=obj.nextInt();
-        num=n;
+        int count = 0, num, orgnum, i,r ,revnum=0        ;
+        Scanner obj = new Scanner(System.in);
+        System.out.println("Enter the number:");
+        num= obj.nextInt();
+        orgnum=num;
         while(num!=0)
         {
-            rem=num%10;
-            result+=(rem*rem*rem);
             num=num/10;
+            count=count+1;
         }
-        if(result==n)
-        System.out.println(+n+" is an armstrong number");
+        num= orgnum;
+        while(num!=0)
+        {
+            int multi =1 ;
+            r = num%10;
+            for(i=0;i<count;i++)
+            {
+                multi=multi*r;
+            }
+            num=num/10;
+            revnum=revnum+multi ;
+        }
+        if(orgnum==revnum)
+             System.out.println("The given number is an armstrong number");
         else
-        System.out.println(+n+" is not an armstrong number");
+             System.out.println("The given number is not an armstrong number");
+                  
+
     }
 }
